@@ -1,35 +1,50 @@
+
+# =========================
+# Python cache
+# =========================
 __pycache__/
 *.py[cod]
 *.pyc
 
+# =========================
+# Virtual environments
+# =========================
 .venv/
 venv/
 .venv312/
 venv312/
 
+# =========================
+# Environment variables / Secrets
+# =========================
 .env
 .env.*
+!.env.example
 
+# =========================
+# Streamlit
+# =========================
 .streamlit/
+
+# =========================
+# VS Code
+# =========================
 .vscode/
 
+# =========================
+# Database
+# =========================
 data.db
 *.sqlite
 *.sqlite3
-# Python
-__pycache__/
-*.pyc
 
-# Virtual environment
-venv/
-.env/
+# =========================
+# Logs
+# =========================
+*.log
 
-# OS files
+# =========================
+# Operating system files
+# =========================
 .DS_Store
 Thumbs.db
-
-# Database
-Main App/data.db
-
-# Logs
-*.log
