@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+*.pyc
+
+.venv/
+venv/
+.venv312/
+venv312/
+
+.env
+.env.*
+
+.streamlit/
+.vscode/
+
+data.db
+*.sqlite
+*.sqlite3
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database
+Main App/data.db
+
+# Logs
+*.log
