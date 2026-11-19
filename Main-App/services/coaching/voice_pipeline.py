@@ -78,12 +78,18 @@ class VoicePipeline:
                 return None
             
         text = self.llm.give_feedback(event, issue)
-        voice = self.tts.speak(text)
+    
+
+        try:
+
+            voice = self.tts.speak(text)
+        except Exception:
+             
+             voice = None
 
         self.last_spoken_at = now
 
         return voice, text
-    
 
 def autoplay_audio(audio_bytes):
     if not audio_bytes:
