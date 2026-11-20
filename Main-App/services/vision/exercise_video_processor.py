@@ -1,7 +1,6 @@
 import os
 import cv2
 import av
-from pathlib import Path
 import numpy as np
 import mediapipe as mp
 import threading
@@ -22,9 +21,16 @@ class VideoProcessorClass(VideoProcessorBase):
         self._latest_metrics = None
         self._exercise_type = "Squats"
 
-        APP_DIR = Path(__file__).resolve().parents[2]
+        model_path = os.path.join(os.getcwd(), "Main-App/ml_models", "pose_landmarker_full.task")
+        base_option = python.BaseOptions(model_asset_path=model_path)
 
-        model_path = str(APP_DIR / "ml_models" / "pose_landmarker_full.task")
+        
+        
+
+        print("Current Directory:", os.getcwd())
+        print("Model Path:", model_path)
+        print("Model Exists:", os.path.exists(model_path))
+
         base_option = python.BaseOptions(model_asset_path=model_path)
 
         options = vision.PoseLandmarkerOptions(
@@ -232,4 +238,7 @@ class VideoProcessorClass(VideoProcessorBase):
                     self._latest_metrics = {"pose_detected": False}
 
         return av.VideoFrame.from_ndarray(image, format="bgr24")
+
+
+        
     
